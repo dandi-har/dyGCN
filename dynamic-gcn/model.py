@@ -137,10 +137,10 @@ class Network(nn.Module):
         self.init_weights()
 
     def init_weights(self):  # Xavier Init
-        init.xavier_normal_(self.rumor_GCN_0.TDRumorGCN.conv1.weight)
-        init.xavier_normal_(self.rumor_GCN_0.TDRumorGCN.conv2.weight)
-        init.xavier_normal_(self.rumor_GCN_0.BURumorGCN.conv1.weight)
-        init.xavier_normal_(self.rumor_GCN_0.BURumorGCN.conv2.weight)
+        self.rumor_GCN_0.TDRumorGCN.conv1.reset_parameters()
+        self.rumor_GCN_0.TDRumorGCN.conv2.reset_parameters()
+        self.rumor_GCN_0.BURumorGCN.conv1.reset_parameters()
+        self.rumor_GCN_0.BURumorGCN.conv2.reset_parameters()
         init.xavier_normal_(self.W_s1.weight)
         init.xavier_normal_(self.fc.weight)
 
